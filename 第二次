@@ -1,0 +1,21 @@
+# 更新 calculator.py
+cat > calculator.py << 'EOF'
+def add(a, b):
+    """加法"""
+    return a + b
+
+def subtract(a, b):
+    """减法"""
+    return a - b
+
+if __name__ == "__main__":
+    x, y = 10, 5
+    print(f"{x} + {y} = {add(x, y)}")
+    print(f"{x} - {y} = {subtract(x, y)}")
+EOF
+
+# 提交
+git add calculator.py
+git commit -m "Add feature: implement add and subtract functions"
+
+git log --oneline
