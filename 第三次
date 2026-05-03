@@ -1,0 +1,32 @@
+# 再次更新 calculator.py
+cat > calculator.py << 'EOF'
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def get_number(prompt):
+    try:
+        return float(input(prompt))
+    except ValueError:
+        print("请输入有效数字，使用0代替")
+        return 0
+
+if __name__ == "__main__":
+    print("=== 简易计算器 ===")
+    x = get_number("请输入第一个数字: ")
+    y = get_number("请输入第二个数字: ")
+    
+    print(f"{x} + {y} = {add(x, y)}")
+    print(f"{x} - {y} = {subtract(x, y)}")
+    print(f"{x} × {y} = {multiply(x, y)}")
+EOF
+
+git add calculator.py
+git commit -m "Add multiply function and interactive user input"
+
+git log --oneline
